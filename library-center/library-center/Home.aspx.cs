@@ -17,13 +17,16 @@ namespace library_center
 
         protected void signIn_Click(object sender, EventArgs e)
         {
-            if (ConnectionSevice.SignIn(inputUser.Text, inputPassword.Text, ""))
+            if (ConnectionSevice.SignIn(inputUser.Text, inputPassword.Text, radioTypeUser.SelectedValue))
             {
-                Response.Redirect("~/DetailedInformation.aspx");
+                Response.Redirect("~/ChoiceAction.aspx");
             }
             else
             {
-                Response.Redirect("~/ErrorSignIn.aspx");
+                inputUser.Text = null;
+                inputPassword.Text = null;
+                radioTypeUser.ClearSelection();
+                Response.Write("<script>alert('Usuario o contrasena erronea, Favor verifique') </script>");
             }
         }
     }
