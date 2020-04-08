@@ -24,6 +24,24 @@ namespace library_center
         protected global::System.Web.UI.WebControls.TextBox inputUser;
 
         /// <summary>
+        /// Control radioTypeUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList radioTypeUser;
+
+        /// <summary>
+        /// Control typeUserRequired.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator typeUserRequired;
+
+        /// <summary>
         /// Control inputPassword.
         /// </summary>
         /// <remarks>
