@@ -108,6 +108,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BookLoan.aspx" />
+    <Content Include="BookReservation.aspx" />
+    <Content Include="ChoiceAction.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -118,6 +121,11 @@
     <Content Include="Home.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="images\amoryguerra.jpg" />
+    <Content Include="images\autoeditar.jpg" />
+    <Content Include="images\azulverde.jpg" />
+    <Content Include="images\marhabita.jpg" />
+    <Content Include="images\soledad.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -258,6 +266,27 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BookLoan.aspx.cs">
+      <DependentUpon>BookLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookLoan.aspx.designer.cs">
+      <DependentUpon>BookLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookReservation.aspx.cs">
+      <DependentUpon>BookReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookReservation.aspx.designer.cs">
+      <DependentUpon>BookReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChoiceAction.aspx.cs">
+      <DependentUpon>ChoiceAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChoiceAction.aspx.designer.cs">
+      <DependentUpon>ChoiceAction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Class\ConnectionSevice.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

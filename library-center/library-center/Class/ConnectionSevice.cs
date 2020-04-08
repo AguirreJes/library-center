@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace library_center.Class
 {
@@ -15,12 +16,12 @@ namespace library_center.Class
             {
                 MySqlConnection connectionBd = getConnection();
 
-                string query = "select count(1) from library.login where username = @username and password = @password";
+                string query = "select count(1) from library.login where username = @username and password = @password and userType = @userType";
                 MySqlCommand cmd;
                 cmd = new MySqlCommand(query, connectionBd);
                 cmd.Parameters.AddWithValue("@username", user);
                 cmd.Parameters.AddWithValue("@password", pass);
-                cmd.Parameters.AddWithValue("@", typeUser);
+                cmd.Parameters.AddWithValue("@userType", typeUser);
                 cmd.ExecuteNonQuery();
                 Int32 countUser = Convert.ToInt32(cmd.ExecuteScalar());
                 connectionBd.Close();
@@ -34,6 +35,24 @@ namespace library_center.Class
                 showMessage("Error Message", exc.Message);
             }
             return response;
+        }
+
+        public static void DetailInformation(GridView gridView, string querySentence)
+        {
+            try
+            {
+                MySqlConnection connectionBd = getConnection();
+                MySqlCommand cmd;
+                cmd = new MySqlCommand(querySentence, connectionBd);
+                gridView.DataSource = cmd.ExecuteReader();
+                gridView.DataBind();
+                connectionBd.Close();
+            }
+            catch (Exception exc)
+            {
+                showMessage("Error Message", exc.Message);
+            }
+
         }
 
         private static MySqlConnection getConnection()
