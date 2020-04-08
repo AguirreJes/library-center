@@ -55,6 +55,29 @@ namespace library_center.Class
 
         }
 
+        public static Boolean updateBook(int idBook, int quantity, int quantityStock, string query)
+        {
+            Boolean redirect = false;
+            try
+            {
+                MySqlConnection connectionBd = getConnection();
+                MySqlCommand cmd;
+                cmd = new MySqlCommand(query, connectionBd);
+                cmd.Parameters.AddWithValue("@idbook", idBook);
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@stock", quantityStock);
+ 
+                cmd.ExecuteNonQuery();
+                connectionBd.Close();
+                redirect = true;
+            }
+            catch (Exception exc)
+            {
+                showMessage("Error Message", exc.Message);
+            }
+            return redirect;
+        }
+
         private static MySqlConnection getConnection()
         {
             MySqlConnection con;
