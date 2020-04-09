@@ -30,7 +30,7 @@
                                 <asp:TextBox ID="inputPassword" runat="server" type="password" class="form-control" placeholder="Contrasena" required="true"> </asp:TextBox>
                             </div>
                             <hr class="my-4">
-                            <asp:Button ID="signIn" runat="server" Text="Iniciar sesion" class="btn btn-lg btn-block btn btn-dark text-uppercase" type="submit" OnClick="signIn_Click" ValidationGroup="signIn"/>
+                            <asp:Button ID="signIn" runat="server" Text="Iniciar sesion" class="btn btn-lg btn-block btn btn-primary text-uppercase" type="submit" OnClick="signIn_Click" ValidationGroup="signIn"/>
                         </div>
                     </div>
                 </div>

@@ -112,7 +112,7 @@
             <footer class="text-muted">
                 <div class="container">
                     <p class="float-right">
-                        <a runat="server" href="Index.aspx">Regresar al inicio</a>
+                        <a runat="server" href="Home.aspx">Regresar al inicio</a>
                     </p>
                     <p>Proyecto biblioteca virtual</p>
                 </div>
