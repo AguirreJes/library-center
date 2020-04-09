@@ -4,7 +4,7 @@
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Acciones</h1>
-        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class="lead">Bienvenido a la “LA BIBLIOTECA”, puedes reservar o pedir un libro de la forma más simple. No esperes más de dos días para retirar el libro solicitado.</p>
     </div>
 
     <div class="container">
