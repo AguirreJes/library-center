@@ -42,7 +42,13 @@
                 </div>
                 <div class="form-group col-md-3">
                     <div class="container">
-                        <label>Ingrese cantidad de copias a reservar</label>
+                        <label>Ingrese cantidad de dias de prestamo</label>
+                        <asp:TextBox ID="inputQuantityDay" runat="server" class="form-control" required="true" Width="100px" Max="9999" Min="1" CausesValidation="true" type="Number"> </asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="container">
+                        <label>Ingrese cantidad de copias</label>
                         <asp:TextBox ID="inputQuantityCopy" runat="server" class="form-control" required="true" Width="100px" Max="9999" Min="1" CausesValidation="true" type="Number"> </asp:TextBox>
                     </div>
                 </div>

@@ -13,6 +13,7 @@ namespace library_center
         private static int quantityBookBd;
         private static int idBookBd;
         private static Boolean redirect = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -52,8 +53,10 @@ namespace library_center
         protected void saveReservation_Click(object sender, EventArgs e)
         {
             int inputQuantity = !string.IsNullOrEmpty(inputQuantityCopy.Text) ? Convert.ToInt32(inputQuantityCopy.Text) : 0;
+            
+            HttpContext.Current.Session["inputQuantity"] = inputQuantity;
 
-            if(inputQuantity<=quantityBookBd)
+            if (inputQuantity<=quantityBookBd)
             {
                 int stockFinal = quantityBookBd - inputQuantity;
                 string query = "update library.book set stock = @stock, cantreserva = @quantity where idbook = @idbook";
@@ -67,7 +70,7 @@ namespace library_center
 
             if (redirect)
             {
-                Response.Redirect("~/Detalle.aspx");
+                Response.Redirect("~/Detail.aspx");
             }
         }
     }

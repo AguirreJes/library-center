@@ -51,12 +51,15 @@ namespace library_center
         protected void saveLoan_Click(object sender, EventArgs e)
         {
             int inputQuantity = !string.IsNullOrEmpty(inputQuantityCopy.Text) ? Convert.ToInt32(inputQuantityCopy.Text) : 0;
+            int inputQuantityDays = !string.IsNullOrEmpty(inputQuantityDay.Text) ? Convert.ToInt32(inputQuantityDay.Text) : 0;
+
+            HttpContext.Current.Session["inputQuantityDays"] = inputQuantityDays;
 
             if (inputQuantity <= quantityBookBd)
             {
                 int stockFinal = quantityBookBd - inputQuantity;
-                string query = "update library.book set stock = @stock, diaprestamo = @quantity where idbook = @idbook";
-                redirect = ConnectionSevice.updateBook(idBookBd, inputQuantity, stockFinal, query);
+                string query = "update library.book set stock = @stock, diaprestamo = @inputQuantityDays, cantreserva = @quantityCopy  where idbook = @idbook";
+                redirect = ConnectionSevice.updateBook(idBookBd, inputQuantityDays, stockFinal, inputQuantity, query);
             }
             else
             {
@@ -66,7 +69,7 @@ namespace library_center
 
             if (redirect)
             {
-                Response.Redirect("~/Detalle.aspx");
+                Response.Redirect("~/Detail.aspx");
             }
         }
     }
